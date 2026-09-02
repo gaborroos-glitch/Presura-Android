@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">ZeusWatch</string>
+    <string name="app_name">Presura Weather</string>
     <string name="permission_read_provider_label">Read ZeusWatch weather provider</string>
     <string name="permission_read_provider_description">Allows another app to read opted-in saved locations and cached forecasts from ZeusWatch.</string>
     <string name="widget_small_label">ZeusWatch Current</string>
@@ -109,10 +109,10 @@
     <string name="common_yes">نعم</string>
     <string name="common_no">لا</string>
     <string name="onboarding_progress">الخطوة %1$d من %2$d</string>
-    <string name="onboarding_title">إعداد ZeusWatch</string>
+    <string name="onboarding_title">إعداد Presura Weather</string>
     <string name="onboarding_subtitle">اختر الأساسيات الآن، ثم عدل كل شيء لاحقا من الإعدادات.</string>
     <string name="onboarding_location_title">ابدأ بالتوقعات الصحيحة</string>
-    <string name="onboarding_location_body">يستخدم ZeusWatch إذن الموقع للعثور على توقعاتك والتنبيهات المحلية وموقع الرادار وافتراضات الأماكن المحفوظة.</string>
+    <string name="onboarding_location_body">يستخدم Presura Weather إذن الموقع للعثور على توقعاتك والتنبيهات المحلية وموقع الرادار وافتراضات الأماكن المحفوظة.</string>
     <string name="onboarding_location_notice_title">أنت المتحكم</string>
     <string name="onboarding_location_notice_body">تظهر مطالبة الإذن على الشاشة الرئيسية. يمكنك السماح مرة واحدة، أو السماح أثناء استخدام التطبيق، أو البحث عن مكان يدويا.</string>
     <string name="onboarding_units_title">اختر وحداتك</string>
@@ -133,7 +133,7 @@
     <string name="onboarding_cards_everything_desc">شغل كل البطاقات المتاحة للوحة معلومات كثيفة للمستخدم المتقدم.</string>
     <string name="onboarding_cards_everything_count">%1$d بطاقة</string>
     <string name="onboarding_continue">متابعة</string>
-    <string name="onboarding_finish">بدء ZeusWatch</string>
+    <string name="onboarding_finish">بدء Presura Weather</string>
     <string name="onboarding_save_error_title">تعذر حفظ الإعداد</string>
     <string name="onboarding_save_error_body">خياراتك لا تزال هنا. حاول حفظها مرة أخرى.</string>
     <string name="onboarding_retry">إعادة المحاولة</string>
@@ -983,7 +983,7 @@
     <string name="main_refreshed_status">Refreshed %1$s</string>
     <string name="main_source_via">عبر %1$s</string>
     <string name="main_source_fallback">الاحتياطي: %1$s</string>
-    <string name="main_footer">ZeusWatch v%1$s • بيانات التوقعات من Open-Meteo</string>
+    <string name="main_footer">Presura Weather v%1$s • بيانات التوقعات من Open-Meteo</string>
     <string name="main_nowcast_unavailable_title">Rain nowcast unavailable</string>
     <string name="main_nowcast_unavailable_message">Minute-by-minute precipitation data is not available for this location right now.</string>
     <string name="main_air_quality_unavailable_title">Air quality unavailable</string>
@@ -995,7 +995,7 @@
     <string name="current_conditions_semantics">%1$s. Currently %2$s, %3$s. Feels like %4$s. High %5$s, low %6$s.</string>
     <string name="settings_title">الإعدادات</string>
     <string name="settings_subtitle">اضبط التوقعات والمرئيات والتنبيهات ومصادر البيانات حسب استخدامك.</string>
-    <string name="settings_eyebrow">تخصيص ZeusWatch</string>
+    <string name="settings_eyebrow">تخصيص Presura Weather</string>
     <string name="settings_category_appearance">المظهر</string>
     <string name="settings_category_appearance_summary">Theme, icons, radar, motion</string>
     <string name="settings_category_forecast">التوقعات</string>

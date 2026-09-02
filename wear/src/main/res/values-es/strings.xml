@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ZeusWatch</string>
+    <string name="app_name">Presura Weather</string>
     <string name="complication_label">Clima</string>
     <string name="wear_complication_temperature_label">Temperatura</string>
     <string name="wear_complication_preview_temperature">72\u00B0</string>
@@ -14,7 +14,7 @@
     <string name="wear_complication_uv_content_description">Índice UV %1$d</string>
     <string name="wear_complication_preview_small_image_cd">Clima parcialmente nublado</string>
     <string name="wear_complication_small_image_content_description">%1$s, %2$d grados</string>
-    <string name="tile_label">Clima ZeusWatch</string>
+    <string name="tile_label">Clima Presura Weather</string>
     <string name="retry">Reintentar</string>
     <string name="wear_refreshing_forecast">Actualizando pronóstico</string>
     <string name="wear_refreshing_forecast_message">Obteniendo el clima más reciente para tu lugar actual.</string>
@@ -79,7 +79,7 @@
     <string name="wear_current_location">Ubicación actual</string>
     <string name="wear_saved_location">Ubicación guardada</string>
     <string name="wear_no_location">Ubicación desconocida</string>
-    <string name="wear_no_location_message">Permite la ubicación en el reloj o abre ZeusWatch en el teléfono para sincronizar el tiempo.</string>
+    <string name="wear_no_location_message">Permite la ubicación en el reloj o abre Presura Weather en el teléfono para sincronizar el tiempo.</string>
     <string name="wear_no_location_action">Permitir ubicación</string>
     <string name="wear_tile_no_location">Abre en el teléfono</string>
 </resources>

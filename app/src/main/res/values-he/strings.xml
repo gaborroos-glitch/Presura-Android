@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">ZeusWatch</string>
+    <string name="app_name">Presura Weather</string>
     <string name="permission_read_provider_label">Read ZeusWatch weather provider</string>
     <string name="permission_read_provider_description">Allows another app to read opted-in saved locations and cached forecasts from ZeusWatch.</string>
     <string name="widget_small_label">ZeusWatch Current</string>
@@ -109,10 +109,10 @@
     <string name="common_yes">כן</string>
     <string name="common_no">לא</string>
     <string name="onboarding_progress">שלב %1$d מתוך %2$d</string>
-    <string name="onboarding_title">הגדרת ZeusWatch</string>
+    <string name="onboarding_title">הגדרת Presura Weather</string>
     <string name="onboarding_subtitle">בחר את הבסיס עכשיו, ואז כוונן הכל מאוחר יותר בהגדרות.</string>
     <string name="onboarding_location_title">התחל עם התחזית הנכונה</string>
-    <string name="onboarding_location_body">ZeusWatch משתמש בהרשאת מיקום כדי למצוא את התחזית, ההתראות המקומיות, מיקום הרדאר וברירות המחדל למקומות שמורים.</string>
+    <string name="onboarding_location_body">Presura Weather משתמש בהרשאת מיקום כדי למצוא את התחזית, ההתראות המקומיות, מיקום הרדאר וברירות המחדל למקומות שמורים.</string>
     <string name="onboarding_location_notice_title">השליטה אצלך</string>
     <string name="onboarding_location_notice_body">בקשת ההרשאה מופיעה במסך הראשי. אפשר לאשר פעם אחת, לאשר בזמן השימוש באפליקציה, או לחפש מקום ידנית.</string>
     <string name="onboarding_units_title">בחר יחידות</string>
@@ -133,7 +133,7 @@
     <string name="onboarding_cards_everything_desc">הפעל את כל הכרטיסים הזמינים ללוח צפוף למשתמשים מתקדמים.</string>
     <string name="onboarding_cards_everything_count">%1$d כרטיסים</string>
     <string name="onboarding_continue">המשך</string>
-    <string name="onboarding_finish">התחל את ZeusWatch</string>
+    <string name="onboarding_finish">התחל את Presura Weather</string>
     <string name="onboarding_save_error_title">ההגדרה לא נשמרה</string>
     <string name="onboarding_save_error_body">הבחירות שלך עדיין כאן. נסה לשמור אותן שוב.</string>
     <string name="onboarding_retry">נסה שוב</string>
@@ -983,7 +983,7 @@
     <string name="main_refreshed_status">Refreshed %1$s</string>
     <string name="main_source_via">via %1$s</string>
     <string name="main_source_fallback">Fallback: %1$s</string>
-    <string name="main_footer">ZeusWatch v%1$s • נתוני תחזית מ-Open-Meteo</string>
+    <string name="main_footer">Presura Weather v%1$s • נתוני תחזית מ-Open-Meteo</string>
     <string name="main_nowcast_unavailable_title">Rain nowcast unavailable</string>
     <string name="main_nowcast_unavailable_message">Minute-by-minute precipitation data is not available for this location right now.</string>
     <string name="main_air_quality_unavailable_title">Air quality unavailable</string>
@@ -995,7 +995,7 @@
     <string name="current_conditions_semantics">%1$s. Currently %2$s, %3$s. Feels like %4$s. High %5$s, low %6$s.</string>
     <string name="settings_title">הגדרות</string>
     <string name="settings_subtitle">כוון תחזיות, תצוגה, התראות ומקורות נתונים לפי השימוש שלך.</string>
-    <string name="settings_eyebrow">התאמה אישית של ZeusWatch</string>
+    <string name="settings_eyebrow">התאמה אישית של Presura Weather</string>
     <string name="settings_category_appearance">מראה</string>
     <string name="settings_category_appearance_summary">Theme, icons, radar, motion</string>
     <string name="settings_category_forecast">תחזית</string>

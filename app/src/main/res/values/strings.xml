@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ZeusWatch</string>
+    <string name="app_name">Presura Weather</string>
     <string name="permission_read_provider_label">Read ZeusWatch weather provider</string>
     <string name="permission_read_provider_description">Allows another app to read opted-in saved locations and cached forecasts from ZeusWatch.</string>
 
     <!-- Widgets -->
-    <string name="widget_small_label">ZeusWatch Current</string>
-    <string name="widget_medium_label">ZeusWatch 3-Day</string>
-    <string name="widget_large_label">ZeusWatch Forecast</string>
-    <string name="widget_forecast_strip_label">ZeusWatch Hourly Strip</string>
-    <string name="widget_saved_cities_label">ZeusWatch Cities</string>
+    <string name="widget_small_label">Presura Weather Current</string>
+    <string name="widget_medium_label">Presura Weather 3-Day</string>
+    <string name="widget_large_label">Presura Weather Forecast</string>
+    <string name="widget_forecast_strip_label">Presura Weather Hourly Strip</string>
+    <string name="widget_saved_cities_label">Presura Weather Cities</string>
     <string name="widget_small_desc">Current temperature and conditions</string>
     <string name="widget_medium_desc">Current conditions with 3-day forecast</string>
     <string name="widget_large_desc">Hourly forecast with 5-day outlook</string>
     <string name="widget_forecast_strip_desc">Compact hourly temperature strip</string>
     <string name="widget_saved_cities_desc">Saved-city temperatures</string>
-    <string name="widget_temp_label">ZeusWatch Temp</string>
+    <string name="widget_temp_label">Presura Weather Temp</string>
     <string name="widget_temp_desc">Temperature and icon only</string>
-    <string name="widget_compact_label">ZeusWatch Compact</string>
+    <string name="widget_compact_label">Presura Weather Compact</string>
     <string name="widget_compact_desc">Temperature, icon, and high/low</string>
-    <string name="widget_daily_label">ZeusWatch Daily</string>
+    <string name="widget_daily_label">Presura Weather Daily</string>
     <string name="widget_daily_desc">7-day forecast outlook</string>
     <string name="widget_loading_message">Loading...</string>
     <string name="widget_empty_title">ZeusWatch</string>
@@ -117,7 +117,7 @@
 
     <!-- First-run onboarding -->
     <string name="onboarding_progress">%1$d of %2$d</string>
-    <string name="onboarding_title">Set up ZeusWatch</string>
+    <string name="onboarding_title">Set up Presura Weather</string>
     <string name="onboarding_subtitle">Choose the basics once, then tune everything later in Settings.</string>
     <string name="onboarding_location_title">Set your location</string>
     <string name="onboarding_location_body">Get forecasts and alerts for the places that matter to you.</string>
@@ -141,11 +141,11 @@
     <string name="onboarding_cards_everything_desc">Enable every available card for a dense power-user dashboard.</string>
     <string name="onboarding_cards_everything_count">%1$d cards</string>
     <string name="onboarding_continue">Continue</string>
-    <string name="onboarding_finish">Start ZeusWatch</string>
+    <string name="onboarding_finish">Start Presura Weather</string>
     <string name="onboarding_save_error_title">Setup was not saved</string>
     <string name="onboarding_save_error_body">Your choices are still here. Try saving them again.</string>
     <string name="onboarding_retry">Retry</string>
-    <string name="whats_new_title">What\'s new in ZeusWatch</string>
+    <string name="whats_new_title">What\'s new in Presura Weather</string>
     <string name="whats_new_body">A few recent upgrades are ready for the next time you check the forecast.</string>
     <string name="whats_new_version">Version %1$s</string>
     <string name="whats_new_done">Got it</string>
@@ -1015,7 +1015,7 @@
     <string name="main_refreshed_status">Refreshed %1$s</string>
     <string name="main_source_via">via %1$s</string>
     <string name="main_source_fallback">Fallback: %1$s</string>
-    <string name="main_footer">ZeusWatch v%1$s \u2022 Forecast data from Open-Meteo</string>
+    <string name="main_footer">Presura Weather v%1$s \u2022 Forecast data from Open-Meteo</string>
     <string name="main_nowcast_unavailable_title">Rain nowcast unavailable</string>
     <string name="main_nowcast_unavailable_message">Minute-by-minute precipitation data is not available for this location right now.</string>
     <string name="main_air_quality_unavailable_title">Air quality unavailable</string>
@@ -1028,8 +1028,8 @@
 
     <!-- Settings -->
     <string name="settings_title">Settings</string>
-    <string name="settings_subtitle">Tune the forecast, visuals, alerts, and data sources around how you use ZeusWatch.</string>
-    <string name="settings_eyebrow">Personalize ZeusWatch</string>
+    <string name="settings_subtitle">Tune forecasts, visuals, alerts, and data sources around how you use Presura Weather.</string>
+    <string name="settings_eyebrow">Personalize Presura Weather</string>
     <string name="settings_category_appearance">Appearance</string>
     <string name="settings_category_appearance_summary">Theme, icons, radar, motion</string>
     <string name="settings_category_forecast">Forecast</string>

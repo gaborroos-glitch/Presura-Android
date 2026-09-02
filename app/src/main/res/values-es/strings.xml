@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ZeusWatch</string>
+    <string name="app_name">Presura Weather</string>
     <string name="permission_read_provider_label">Leer proveedor de clima de ZeusWatch</string>
     <string name="permission_read_provider_description">Permite que otra app lea ubicaciones guardadas y pronosticos en cache de ZeusWatch cuando esta activado.</string>
 
@@ -113,10 +113,10 @@
     <string name="common_yes">Sí</string>
     <string name="common_no">No</string>
     <string name="onboarding_progress">Paso %1$d de %2$d</string>
-    <string name="onboarding_title">Configurar ZeusWatch</string>
+    <string name="onboarding_title">Configurar Presura Weather</string>
     <string name="onboarding_subtitle">Elige lo básico una vez y ajusta todo después en Ajustes.</string>
     <string name="onboarding_location_title">Empieza con el pronóstico correcto</string>
-    <string name="onboarding_location_body">ZeusWatch usa el permiso de ubicación para encontrar tu pronóstico, alertas locales, posición de radar y valores predeterminados de lugares guardados.</string>
+    <string name="onboarding_location_body">Presura Weather usa el permiso de ubicación para encontrar tu pronóstico, alertas locales, posición de radar y valores predeterminados de lugares guardados.</string>
     <string name="onboarding_location_notice_title">Tú tienes el control</string>
     <string name="onboarding_location_notice_body">El aviso de permiso aparece en la pantalla principal. Puedes permitir una vez, permitir mientras usas la app o buscar un lugar manualmente.</string>
     <string name="onboarding_units_title">Elige tus unidades</string>
@@ -137,11 +137,11 @@
     <string name="onboarding_cards_everything_desc">Activa todas las tarjetas disponibles para un panel denso de usuario avanzado.</string>
     <string name="onboarding_cards_everything_count">%1$d tarjetas</string>
     <string name="onboarding_continue">Continuar</string>
-    <string name="onboarding_finish">Iniciar ZeusWatch</string>
+    <string name="onboarding_finish">Iniciar Presura Weather</string>
     <string name="onboarding_save_error_title">La configuración no se guardó</string>
     <string name="onboarding_save_error_body">Tus opciones siguen aquí. Intenta guardarlas de nuevo.</string>
     <string name="onboarding_retry">Reintentar</string>
-    <string name="whats_new_title">Novedades de ZeusWatch</string>
+    <string name="whats_new_title">Novedades de Presura Weather</string>
     <string name="whats_new_body">Algunas mejoras recientes están listas para tu próxima revisión del pronóstico.</string>
     <string name="whats_new_version">Versión %1$s</string>
     <string name="whats_new_done">Entendido</string>
@@ -977,7 +977,7 @@
     <string name="main_refreshed_status">Actualizado %1$s</string>
     <string name="main_source_via">vía %1$s</string>
     <string name="main_source_fallback">Respaldo: %1$s</string>
-    <string name="main_footer">ZeusWatch v%1$s \u2022 Datos de pronóstico de Open-Meteo</string>
+    <string name="main_footer">Presura Weather v%1$s \u2022 Datos de pronóstico de Open-Meteo</string>
     <string name="main_nowcast_unavailable_title">Lluvia inmediata no disponible</string>
     <string name="main_nowcast_unavailable_message">Los datos de precipitación minuto a minuto no están disponibles para esta ubicación ahora.</string>
     <string name="main_air_quality_unavailable_title">Calidad del aire no disponible</string>
@@ -997,8 +997,8 @@
 
     <!-- Settings -->
     <string name="settings_title">Ajustes</string>
-    <string name="settings_subtitle">Ajusta el pronóstico, visuales, alertas y fuentes de datos según tu uso de ZeusWatch.</string>
-    <string name="settings_eyebrow">Personalizar ZeusWatch</string>
+    <string name="settings_subtitle">Ajusta el pronóstico, visuales, alertas y fuentes de datos según tu uso de Presura Weather.</string>
+    <string name="settings_eyebrow">Personalizar Presura Weather</string>
     <string name="settings_category_appearance">Apariencia</string>
     <string name="settings_category_appearance_summary">Tema, iconos, radar, movimiento</string>
     <string name="settings_category_forecast">Pronóstico</string>

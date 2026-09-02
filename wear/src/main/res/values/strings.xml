@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ZeusWatch</string>
+    <string name="app_name">Presura Weather</string>
     <string name="complication_label">Weather</string>
     <string name="wear_complication_temperature_label">Temperature</string>
     <string name="wear_complication_preview_temperature">72\u00B0</string>
@@ -14,7 +14,7 @@
     <string name="wear_complication_uv_content_description">UV Index %1$d</string>
     <string name="wear_complication_preview_small_image_cd">Partly cloudy weather</string>
     <string name="wear_complication_small_image_content_description">%1$s, %2$d degrees</string>
-    <string name="tile_label">ZeusWatch Weather</string>
+    <string name="tile_label">Presura Weather</string>
     <string name="retry">Retry</string>
     <string name="wear_refreshing_forecast">Refreshing forecast</string>
     <string name="wear_refreshing_forecast_message">Pulling the latest weather for your current place.</string>
@@ -79,7 +79,7 @@
     <string name="wear_current_location">Current Location</string>
     <string name="wear_saved_location">Saved Location</string>
     <string name="wear_no_location">Location unknown</string>
-    <string name="wear_no_location_message">Allow location on the watch, or open ZeusWatch on your phone to sync weather here.</string>
+    <string name="wear_no_location_message">Allow location on the watch, or open Presura Weather on your phone to sync weather here.</string>
     <string name="wear_no_location_action">Allow location</string>
     <string name="wear_tile_no_location">Open on phone</string>
 </resources>
