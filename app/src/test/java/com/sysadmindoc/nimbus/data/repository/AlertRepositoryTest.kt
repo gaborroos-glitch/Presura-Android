@@ -218,26 +218,32 @@ class AlertRepositoryTest {
         // emptyList(). The fix routes MeteoAlarm through the country-aware
         // path and short-circuits when the country isn't yet known, so the
         // API is never called.
-        every { prefs.settings } returns flowOf(
-            NimbusSettings(alertSourcePref = AlertSourcePreference.ALL_SOURCES),
-        )
-        every { anyConstructed<Geocoder>().getFromLocation(any(), any(), any()) } throws
-            RuntimeException("Geocoder unavailable")
+        val originalTimeZone = TimeZone.getDefault()
+        TimeZone.setDefault(TimeZone.getTimeZone("America/Mexico_City"))
+        try {
+            every { prefs.settings } returns flowOf(
+                NimbusSettings(alertSourcePref = AlertSourcePreference.ALL_SOURCES),
+            )
+            every { anyConstructed<Geocoder>().getFromLocation(any(), any(), any()) } throws
+                RuntimeException("Geocoder unavailable")
 
-        val meteoAlarmApi = mockk<MeteoAlarmApi>()
-        val meteoAlarmAdapter = MeteoAlarmAdapter(meteoAlarmApi)
-        coEvery { api.getActiveAlerts(any(), any(), any()) } returns NwsAlertResponse()
+            val meteoAlarmApi = mockk<MeteoAlarmApi>()
+            val meteoAlarmAdapter = MeteoAlarmAdapter(meteoAlarmApi)
+            coEvery { api.getActiveAlerts(any(), any(), any()) } returns NwsAlertResponse()
 
-        val multiSourceRepo = AlertRepository(
-            context = context,
-            adapters = setOf(nwsAdapter, meteoAlarmAdapter),
-            prefs = prefs,
-        )
+            val multiSourceRepo = AlertRepository(
+                context = context,
+                adapters = setOf(nwsAdapter, meteoAlarmAdapter),
+                prefs = prefs,
+            )
 
-        val result = multiSourceRepo.getAlerts(0.0, 0.0)
-        assertTrue(result.isSuccess)
-        assertTrue(result.getOrThrow().isEmpty())
-        coVerify(exactly = 0) { meteoAlarmApi.getWarnings(any()) }
+            val result = multiSourceRepo.getAlerts(0.0, 0.0)
+            assertTrue(result.isSuccess)
+            assertTrue(result.getOrThrow().isEmpty())
+            coVerify(exactly = 0) { meteoAlarmApi.getWarnings(any()) }
+        } finally {
+            TimeZone.setDefault(originalTimeZone)
+        }
     }
 
     @Test

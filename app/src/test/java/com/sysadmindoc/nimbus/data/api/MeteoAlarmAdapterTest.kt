@@ -43,8 +43,8 @@ class MeteoAlarmAdapterTest {
                             headline = "Severe Thunderstorm Warning",
                             description = "Large hail and strong winds expected.",
                             instruction = "Stay indoors.",
-                            onset = "2026-06-15T12:00:00+02:00",
-                            expires = "2026-06-15T18:00:00+02:00",
+                            onset = "2099-06-15T12:00:00+02:00",
+                            expires = "2099-06-15T18:00:00+02:00",
                             senderName = "Deutscher Wetterdienst",
                             area = listOf(MeteoAlarmArea(areaDesc = "Bavaria")),
                         )
@@ -69,8 +69,8 @@ class MeteoAlarmAdapterTest {
         assertEquals("Likely", alert.certainty)
         assertEquals("Deutscher Wetterdienst", alert.senderName)
         assertEquals("Bavaria", alert.areaDescription)
-        assertEquals("2026-06-15T12:00:00+02:00", alert.effective)
-        assertEquals("2026-06-15T18:00:00+02:00", alert.expires)
+        assertEquals("2099-06-15T12:00:00+02:00", alert.effective)
+        assertEquals("2099-06-15T18:00:00+02:00", alert.expires)
     }
 
     @Test
@@ -297,6 +297,70 @@ class MeteoAlarmAdapterTest {
         val result = adapter.getAlertsForCountry("AT")
         assertTrue(result.isSuccess)
         assertTrue(result.getOrThrow().isEmpty())
+    }
+
+    @Test
+    fun `no-warning record is not mapped as an active alert`() = runTest {
+        coEvery { api.getWarnings("netherlands") } returns MeteoAlarmResponse(
+            warnings = listOf(
+                MeteoAlarmWarning(
+                    identifier = "nl-clear",
+                    info = listOf(
+                        MeteoAlarmInfo(
+                            event = "High temperature",
+                            severity = "Minor",
+                            description = "Hitte - Geen waarschuwingen voor Utrecht - Nederland",
+                            area = listOf(MeteoAlarmArea(areaDesc = "Utrecht")),
+                        ),
+                    ),
+                ),
+            ),
+        )
+
+        assertTrue(adapter.getAlertsForCountry("NL", setOf("Utrecht")).getOrThrow().isEmpty())
+    }
+
+    @Test
+    fun `active warning for selected area is retained while unrelated area is filtered`() = runTest {
+        coEvery { api.getWarnings("netherlands") } returns MeteoAlarmResponse(
+            warnings = listOf(
+                MeteoAlarmWarning(identifier = "utrecht", info = listOf(
+                    MeteoAlarmInfo(event = "Rain", severity = "Moderate", area = listOf(MeteoAlarmArea(areaDesc = "Utrecht"))),
+                )),
+                MeteoAlarmWarning(identifier = "groningen", info = listOf(
+                    MeteoAlarmInfo(event = "Wind", severity = "Severe", area = listOf(MeteoAlarmArea(areaDesc = "Groningen"))),
+                )),
+            ),
+        )
+
+        val alerts = adapter.getAlertsForCountry("NL", setOf("Utrecht")).getOrThrow()
+        assertEquals(listOf("utrecht"), alerts.map { it.id })
+    }
+
+    @Test
+    fun `active country-wide warning is retained`() = runTest {
+        coEvery { api.getWarnings("netherlands") } returns MeteoAlarmResponse(
+            warnings = listOf(
+                MeteoAlarmWarning(identifier = "national", info = listOf(
+                    MeteoAlarmInfo(event = "Storm", severity = "Severe", area = listOf(MeteoAlarmArea(areaDesc = "Netherlands"))),
+                )),
+            ),
+        )
+
+        assertEquals(1, adapter.getAlertsForCountry("NL", setOf("Utrecht")).getOrThrow().size)
+    }
+
+    @Test
+    fun `cancelled expired and non-actual CAP records are not mapped`() = runTest {
+        coEvery { api.getWarnings("netherlands") } returns MeteoAlarmResponse(
+            warnings = listOf(
+                MeteoAlarmWarning(msgType = "Cancel", info = listOf(MeteoAlarmInfo(event = "Wind", severity = "Severe"))),
+                MeteoAlarmWarning(info = listOf(MeteoAlarmInfo(event = "Rain", severity = "Moderate", expires = "2020-01-01T00:00:00Z"))),
+                MeteoAlarmWarning(status = "Test", info = listOf(MeteoAlarmInfo(event = "Snow", severity = "Minor"))),
+            ),
+        )
+
+        assertTrue(adapter.getAlertsForCountry("NL").getOrThrow().isEmpty())
     }
 
     @Test

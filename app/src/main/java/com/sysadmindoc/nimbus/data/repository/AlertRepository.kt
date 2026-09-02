@@ -181,6 +181,12 @@ class AlertRepository @Inject constructor(
             return emptyList()
         }
 
+        val targetAreaNames = if (selectedAdapters.any { it is MeteoAlarmAdapter }) {
+            detectAdministrativeAreaNames(latitude, longitude)
+        } else {
+            emptySet()
+        }
+
         return coroutineScope {
             selectedAdapters.map { adapter ->
                 async {
@@ -193,7 +199,9 @@ class AlertRepository @Inject constructor(
                     when {
                         adapter is MeteoAlarmAdapter -> {
                             if (countryCode != null && countryCode in adapter.supportedRegions) {
-                                queryAdapter(adapter) { adapter.getAlertsForCountry(countryCode) }
+                                queryAdapter(adapter) {
+                                    adapter.getAlertsForCountry(countryCode, targetAreaNames)
+                                }
                             } else {
                                 AdapterOutcome.skipped(adapter.sourceId)
                             }
@@ -371,6 +379,39 @@ class AlertRepository @Inject constructor(
             geocoder.getFromLocation(lat, lon, 1)?.firstOrNull()?.countryCode?.uppercase()
         }
     }
+
+    /**
+     * MeteoAlarm feeds are country-wide and normally carry CAP area descriptions
+     * rather than polygons. Match those descriptions against Android's locality
+     * hierarchy when available; an empty result deliberately preserves valid
+     * country-wide warnings instead of guessing a distance threshold.
+     */
+    private suspend fun detectAdministrativeAreaNames(lat: Double, lon: Double): Set<String> =
+        withContext(Dispatchers.IO) {
+            if (!Geocoder.isPresent()) return@withContext emptySet()
+            runCatching {
+                val address = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    suspendCancellableCoroutine { continuation ->
+                        Geocoder(context, Locale.US).getFromLocation(lat, lon, 1, object : Geocoder.GeocodeListener {
+                            override fun onGeocode(addresses: MutableList<Address>) {
+                                if (continuation.isActive) continuation.resume(addresses.firstOrNull())
+                            }
+
+                            override fun onError(errorMessage: String?) {
+                                if (continuation.isActive) continuation.resume(null)
+                            }
+                        })
+                    }
+                } else {
+                    @Suppress("DEPRECATION")
+                    Geocoder(context, Locale.US).getFromLocation(lat, lon, 1)?.firstOrNull()
+                }
+                listOfNotNull(address?.locality, address?.subAdminArea, address?.adminArea)
+                    .map(String::trim)
+                    .filter(String::isNotEmpty)
+                    .toSet()
+            }.getOrElse { emptySet() }
+        }
 
     /**
      * Rough heuristic: map the device's default timezone to a country code.

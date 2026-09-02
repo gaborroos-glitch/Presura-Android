@@ -33,6 +33,7 @@ data class MeteoAlarmWarning(
     val identifier: String? = null,
     val sender: String? = null,
     val sent: String? = null,
+    val status: String? = null,
     @SerialName("msg_type") val msgType: String? = null,
     val info: List<MeteoAlarmInfo> = emptyList(),
 )
@@ -42,6 +43,7 @@ data class MeteoAlarmAlert(
     val identifier: String? = null,
     val sender: String? = null,
     val sent: String? = null,
+    val status: String? = null,
     val msgType: String? = null,
     val info: List<MeteoAlarmInfo> = emptyList(),
 )
